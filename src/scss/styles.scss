@@ -1,6 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+$Big-Shoulders: 'Big Shoulders Display', cursive;
+$Lexend-Deca: 'Lexend Deca', sans-serif;
+
+// -> Primary
+$Bright-orange: hsl(31, 77%, 52%);
+$Dark-cyan: hsl(184, 100%, 22%);
+$Very-dark-cyan: hsl(179, 100%, 13%);
+// -> Neutral
+// paragraphs
+$Transparent-white: hsla(0, 0%, 100%, 0.75);
+// (background, headings, buttons)
+$Very-light-gray: hsl(0, 0%, 95%);
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: $Very-light-gray;
+  font-family: $Lexend-Deca;
+}
+
+.main {
+  overflow-x: hidden;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    max-width: 325px;
+    display: grid;
+  }
+
+  &__card {
+    width: 100%;
+    padding: 3.1rem;
+
+    &-image {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    &-title {
+      font-family: $Big-Shoulders;
+      text-transform: uppercase;
+      color: $Very-light-gray;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    &-description {
+      color: $Transparent-white;
+      font-size: .9rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    &-btn {
+      &_orange,
+      &_dark-cyan,
+      &_very-dark-cyan {
+        outline: none;
+        border: none;
+        background-color: $Very-light-gray;
+        cursor: pointer;
+        font-family: inherit;
+        border-radius: 2rem;
+        padding: 1rem 2rem;
+      }
+
+      &_orange {
+        color: $Bright-orange;
+      }
+
+      &_dark-cyan {
+        color: $Dark-cyan;
+      }
+
+      &_very-dark-cyan {
+        color: $Very-dark-cyan;
+      }
+    }
+  }
+
+  &__card:nth-child(1) {
+    background-color: $Bright-orange;
+    border-radius: .5rem .5rem 0 0;
+  }
+
+  &__card:nth-child(2) {
+    background-color: $Dark-cyan;
+  }
+
+  &__card:nth-child(3) {
+    background-color: $Very-dark-cyan;
+    border-radius: 0 0 .5rem .5rem;
+  }
 }
 
